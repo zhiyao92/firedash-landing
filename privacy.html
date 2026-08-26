@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FireDash — Privacy Policy</title>
+  <meta name="description" content="How FireDash handles your Google account data, Firebase project data, and analytics." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --amber: #F5871F; --bg: #0E1116; --surface: #161B22; --surface2: #1C232C;
+      --border: #2A323C; --text: #E8EDF3; --muted: #9AA5B1; --soft: #6B7684;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px; border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-weight: 800; font-size: 1.05rem; text-decoration: none; color: var(--text); }
+    .nav-logo em { color: var(--amber); font-style: normal; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+    header { padding: 56px 0 24px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: -1px; margin-bottom: 8px; }
+    .updated { color: var(--soft); font-size: 0.88rem; }
+    h2 { font-size: 1.15rem; margin: 36px 0 10px; letter-spacing: -0.3px; }
+    h3 { font-size: 0.98rem; margin: 22px 0 6px; color: var(--text); }
+    p, li { color: var(--muted); font-size: 0.95rem; }
+    p { margin-bottom: 12px; }
+    ul { margin: 0 0 14px 20px; display: grid; gap: 7px; }
+    strong { color: var(--text); }
+    .callout {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--amber); border-radius: 10px;
+      padding: 18px 20px; margin: 20px 0;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--text); font-weight: 600; }
+    td { color: var(--muted); }
+    code { background: var(--surface2); padding: 1px 6px; border-radius: 4px; font-size: 0.86em; color: var(--text); }
+    footer { border-top: 1px solid var(--border); margin-top: 48px; padding: 28px 0 56px; text-align: center; color: var(--soft); font-size: 0.85rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    @media (max-width: 600px) { nav { padding: 14px 20px; } .wrap { padding: 0 20px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">Fire<em>Dash</em></a>
+    <a href="index.html" style="color:var(--muted);text-decoration:none;font-size:0.9rem">Home</a>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: 27 August 2026</p>
+    </header>
+
+    <p>
+      FireDash is an iOS app that lets you administer Firebase projects you already own, from
+      an iPhone or iPad. This policy explains exactly what it touches and what it does not.
+    </p>
+
+    <div class="callout">
+      <p style="margin:0"><strong>The short version.</strong> FireDash has no servers of its own.
+      It runs entirely on your device and talks directly to Google's APIs using your own Google
+      sign-in. Your Firebase data is never sent anywhere except between your device and Google.
+      We never see it.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>
+      FireDash is developed by Kelvin Tan, an independent app developer. For any privacy question,
+      contact <a href="mailto:kelvin.vins@gmail.com">kelvin.vins@gmail.com</a>.
+    </p>
+    <p>
+      FireDash is an independent app. It is not affiliated with, sponsored by, or endorsed by
+      Google LLC.
+    </p>
+
+    <h2>2. Signing in with Google</h2>
+    <p>
+      To administer your Firebase projects, FireDash asks you to sign in with Google. It requests
+      only the narrow permissions each feature needs, and it asks for them the first time you open
+      the screen that needs them — not all at once at sign-in.
+    </p>
+
+    <table>
+      <tr><th>Permission</th><th>Used for</th></tr>
+      <tr><td><code>auth/firebase</code></td><td>Listing the Firebase projects you own, and reading and publishing security rules and Remote Config</td></tr>
+      <tr><td><code>auth/datastore</code></td><td>Reading and editing your Firestore documents and indexes</td></tr>
+      <tr><td><code>auth/identitytoolkit</code></td><td>Viewing and managing the users of your own apps</td></tr>
+    </table>
+
+    <p>
+      Your Google account credentials are never seen by FireDash. Sign-in is handled by Google's
+      own SDK, which returns an access token. That token is stored in the iOS Keychain on your
+      device and is used only to call Google's APIs on your behalf. Signing out removes it.
+    </p>
+
+    <h3>Limited Use disclosure</h3>
+    <p>
+      FireDash's use and transfer of information received from Google APIs adheres to the
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+      including the Limited Use requirements. Specifically, data obtained through Google APIs is
+      used only to provide the features described on this page, is never sold, is never used for
+      advertising, and is never transferred to third parties except as required to provide those
+      features or to comply with the law.
+    </p>
+
+    <h2>3. Your Firebase project data</h2>
+    <p>
+      When you browse a collection, edit a document, publish rules or change a config value,
+      that request goes directly from your device to Google's servers. It does not pass through
+      any server operated by FireDash, because there isn't one.
+    </p>
+    <ul>
+      <li>Your project data is <strong>not copied</strong> to any FireDash server.</li>
+      <li>Your project data is <strong>not shared</strong> with any third party.</li>
+      <li>Data fetched for display is held in memory and cleared when you switch projects or sign out.</li>
+      <li>FireDash remembers only which project you last had selected, stored locally on your device.</li>
+    </ul>
+
+    <h2>4. Analytics</h2>
+    <p>
+      FireDash records a small amount of anonymous usage data so we can tell which features are
+      worth continuing to build. This is deliberately limited to which <em>kind</em> of screen was
+      opened and whether an action succeeded.
+    </p>
+    <p>
+      <strong>No identifiers from your projects are ever recorded.</strong> Analytics events carry
+      only fixed values from a predefined list — for example <code>service_opened</code> with
+      <code>service: firestore</code>. The app is built so that project IDs, collection names,
+      document IDs, field values, file paths and email addresses cannot be included in an
+      analytics event, even accidentally.
+    </p>
+    <p>
+      This data is processed by Google Analytics for Firebase. You can use FireDash's demo mode
+      without signing in at all.
+    </p>
+
+    <h2>5. What we never collect</h2>
+    <ul>
+      <li>The contents of your Firebase data</li>
+      <li>Your Google account password</li>
+      <li>Your contacts, photos, location, or device identifiers for advertising</li>
+      <li>Any personal information about <em>your</em> app's users</li>
+    </ul>
+
+    <h2>6. Data retention and deletion</h2>
+    <p>
+      Because FireDash stores nothing on a server, there is no account to delete. Removing the
+      app from your device removes the stored access token and the locally remembered project
+      selection. You can also revoke FireDash's access at any time from your
+      <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>.
+    </p>
+
+    <h2>7. Children</h2>
+    <p>
+      FireDash is a developer tool and is not directed at children under 13. We do not knowingly
+      collect information from children.
+    </p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>
+      If this policy changes materially, the updated version will be posted here with a new date
+      at the top. Continued use of the app after a change means you accept the updated policy.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      Questions, or a request about your data:
+      <a href="mailto:kelvin.vins@gmail.com">kelvin.vins@gmail.com</a>.
+    </p>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <a href="index.html">← Back to FireDash</a>
+    </div>
+  </footer>
+</body>
+</html>
