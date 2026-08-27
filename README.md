@@ -4,8 +4,11 @@ Static landing page and privacy policy for **FireDash**, the iOS Firebase consol
 
 Two files, no build step:
 
-- `index.html` — what the app does and how it avoids wrecking production
+- `index.html` — what the app does, how it avoids wrecking production, and the support contact
 - `privacy.html` — the privacy policy
+
+`index.html` doubles as the App Store **Support URL** and Marketing URL, so the support
+section has to stay reachable and has to offer a real way to reach a person — Apple checks.
 
 ## Why this exists
 

@@ -85,16 +85,29 @@
     <h2>2. Signing in with Google</h2>
     <p>
       To administer your Firebase projects, FireDash asks you to sign in with Google. It requests
-      only the narrow permissions each feature needs, and it asks for them the first time you open
-      the screen that needs them — not all at once at sign-in.
+      narrow, per-service permissions rather than blanket access to your Google Cloud account.
+      Every permission it can ask for is listed below.
     </p>
 
     <table>
       <tr><th>Permission</th><th>Used for</th></tr>
-      <tr><td><code>auth/firebase</code></td><td>Listing the Firebase projects you own, and reading and publishing security rules and Remote Config</td></tr>
+      <tr><td><code>auth/firebase</code></td><td>Listing the Firebase projects you own, and reading and publishing security rules, Remote Config, Hosting releases and App Check settings</td></tr>
       <tr><td><code>auth/datastore</code></td><td>Reading and editing your Firestore documents and indexes</td></tr>
       <tr><td><code>auth/identitytoolkit</code></td><td>Viewing and managing the users of your own apps</td></tr>
+      <tr><td><code>auth/firebase.database</code></td><td>Reading and editing your Realtime Database data and rules</td></tr>
+      <tr><td><code>auth/devstorage.read_write</code></td><td>Browsing, downloading, uploading and deleting your Cloud Storage files</td></tr>
+      <tr><td><code>auth/cloudfunctions</code></td><td>Listing and inspecting your Cloud Functions</td></tr>
+      <tr><td><code>auth/logging.read</code></td><td>Reading the logs your Cloud Functions produce</td></tr>
+      <tr><td><code>auth/firebase.messaging</code></td><td>Sending a push message you compose, to a target you enter</td></tr>
+      <tr><td><code>auth/analytics.readonly</code></td><td>Reading the Google Analytics property linked to your project</td></tr>
+      <tr><td><code>auth/monitoring.read</code></td><td>Reading usage counts — Firestore operations, egress, function errors and sign-ins — for the Usage screen and for usage alerts</td></tr>
     </table>
+
+    <p>
+      FireDash does not request <code>cloud-platform</code>, which would grant it read and write
+      access to every Google Cloud resource you own. Each permission above covers one service, so
+      declining one leaves the rest working.
+    </p>
 
     <p>
       Your Google account credentials are never seen by FireDash. Sign-in is handled by Google's
@@ -139,8 +152,9 @@
       analytics event, even accidentally.
     </p>
     <p>
-      This data is processed by Google Analytics for Firebase. You can use FireDash's demo mode
-      without signing in at all.
+      This data is processed by Google Analytics for Firebase. One event, <code>alerts_fired</code>,
+      carries a count of how many usage alerts triggered on a check — a number, never which project
+      or which metric.
     </p>
 
     <h2>5. What we never collect</h2>
