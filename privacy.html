@@ -91,12 +91,10 @@
 
     <table>
       <tr><th>Permission</th><th>Used for</th></tr>
-      <tr><td><code>auth/firebase</code></td><td>Listing the Firebase projects you own, and reading and publishing security rules, Remote Config, Hosting releases and App Check settings</td></tr>
+      <tr><td><code>auth/firebase</code></td><td>Listing the Firebase projects you own, reading and publishing security rules, reading your Remote Config, viewing and managing the users of your own apps, and reading Hosting releases, App Check settings and Crashlytics issues</td></tr>
       <tr><td><code>auth/datastore</code></td><td>Reading and editing your Firestore documents and indexes</td></tr>
-      <tr><td><code>auth/identitytoolkit</code></td><td>Viewing and managing the users of your own apps</td></tr>
       <tr><td><code>auth/firebase.database</code></td><td>Reading and editing your Realtime Database data and rules</td></tr>
       <tr><td><code>auth/devstorage.read_write</code></td><td>Browsing, downloading, uploading and deleting your Cloud Storage files</td></tr>
-      <tr><td><code>auth/cloudfunctions</code></td><td>Listing and inspecting your Cloud Functions</td></tr>
       <tr><td><code>auth/logging.read</code></td><td>Reading the logs your Cloud Functions produce</td></tr>
       <tr><td><code>auth/firebase.messaging</code></td><td>Sending a push message you compose, to a target you enter</td></tr>
       <tr><td><code>auth/analytics.readonly</code></td><td>Reading the Google Analytics property linked to your project</td></tr>
@@ -104,9 +102,14 @@
     </table>
 
     <p>
-      FireDash does not request <code>cloud-platform</code>, which would grant it read and write
-      access to every Google Cloud resource you own. Each permission above covers one service, so
-      declining one leaves the rest working.
+      Every permission above covers one service, so declining one leaves the rest working.
+    </p>
+
+    <p>
+      FireDash requests the narrowest permissions available for each feature wherever Google
+      provides service-specific scopes. Some Firebase and Google Cloud APIs may still require
+      broader access than their feature names suggest, so FireDash describes each permission
+      clearly in the consent flow and keeps high-impact actions behind explicit user actions.
     </p>
 
     <p>
@@ -194,7 +197,9 @@
 
   <footer>
     <div class="wrap">
-      <a href="index.html">← Back to FireDash</a>
+      <a href="index.html">Back to FireDash</a>
+      <a href="terms.html">Terms</a>
+      <a href="data-deletion.html">Data deletion</a>
     </div>
   </footer>
 </body>
